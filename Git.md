@@ -17,8 +17,8 @@
 ### Variables
 - **user.name &lt;value>**
 - **user.email &lt;value>**
-- **http.proxy &lt;value>**
-- **https.proxy &lt;value>**
+- **http.proxy &lt;value>**               `http://proxy-shz.intel.com:911`
+- **https.proxy &lt;value>**              `https://proxy-shz.intel.com:911`
 - **apply.whitespace &lt;value>**
   - **warn: Apply the patch with whitespace and give a warning message**
   - **nowarn: Apply the patch with witespace and not give the messsage**
@@ -92,3 +92,74 @@
   - **If staged/index is empty, Use HEAD to restore file**
 - **git checkout HEAD &lt;file>**
   - **Indicate to use HEAD to restore file and clear staged/index space**
+
+## merge
+- **git merge &lt;branch name>**
+
+### fast forward
+### merge conflict
+
+## log
+
+## stash
+- **git stash**
+- **git stash list**
+- **git stash pop**
+- **git stash drop**
+
+# Sharing and Updating Projects
+
+## fetch
+- **git fetch**
+- **git fetch &lt;host name>**
+- **git fetch &lt;host name> &lt;remote branch name>**
+- **git fetch &lt;host name> &lt;remote branch name> : &lt;branch name>**
+
+## push
+- **git push**
+- **git push &lt;host name>**
+- **git push &lt;host name> --delete &lt;remote branch name>**
+- **git push &lt;host name> : &lt;remote branch name>**
+- **git push &lt;host name> &lt;branch name> : &lt;remote branch name>**
+
+## remote
+- **git remote**
+- **git remote -v**
+- **git remote show &lt;host name>**
+- **git remote add &lt;host name> &lt;url>**
+- **git remote remove(rm) &lt;host name>**
+
+# Patching
+
+## apply
+- **git apply `--` check &lt;patch file>**
+- **git apply &lt;patch file>**
+
+# Email
+
+## format-patch
+- **git format-patch -&lt;number>**
+- **git format-patch -&lt;number> &lt;commit-id>**
+- **git format-patch -s &lt;commit-id>**
+- **git format-patch `--`cover-letter**
+
+# Administration
+
+## clean
+- **git clean -n**                `List which files will be remove`
+- **git clean -f**                `Remove un-tracked files`
+- **git clean -d**                `Remove un-tracked folders`
+- **git clean -x**                `Remove ignored files`
+
+## reflog
+
+# Github
+
+## Generate key
+- **step 1: ssh-keygen -C &lt;user.email> -t rsa**
+  - **Will genreate private and public key under the folder**
+  - **Linux: /home/xx/.ssh**
+  - **Windows: C:\Users\xx\.ssh**
+  - **private key: id_rsa**
+  - **public key: id_rsa.pub**
+- **step 2: Add public key on github**
