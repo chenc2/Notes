@@ -141,6 +141,7 @@
 - **git format-patch -&lt;number>**
 - **git format-patch -&lt;number> &lt;commit-id>**
 - **git format-patch -s &lt;commit-id>**
+- **git format-patch -1 &lt;commit-id>**
 - **git format-patch `--`cover-letter**
 
 # Administration
