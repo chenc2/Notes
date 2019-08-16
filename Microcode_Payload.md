@@ -1,5 +1,5 @@
 # Microcode Payload
-Get more details, please reference SDM 9.11
+Get more details, please reference to SDM 9.11
 ## Payload Table
 |Section|Type|Size|
 |:----:|:------------------:|:------:|
@@ -166,4 +166,4 @@ typedef struct {
 } CPU_MICROCODE_EXTENDED_TABLE;
 ```
 ## Check Flow
-&ensp;&ensp;&ensp;&ensp;Please reference Microcode.c in UefiCpuPkg
+&ensp;&ensp;&ensp;&ensp;Please reference to Microcode.c in UefiCpuPkg
