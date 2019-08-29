@@ -41,7 +41,7 @@ EFIAPI
 PeimTestEntryPoint(
   IN       EFI_PEI_FILE_HANDLE  FileHandle,
   IN CONST EFI_PEI_SERVICES     **PeiServices
-)
+  )
 {
   EFI_STATUS Status;
 
@@ -105,7 +105,7 @@ EFIAPI
 PeimCallerEntryPoint(
   IN       EFI_PEI_FILE_HANDLE  FileHandle,
   IN CONST EFI_PEI_SERVICES     **PeiServices
-)
+  )
 {
   EFI_STATUS  Status;
   PEIM_TEST_PRINT_PROTOCOL *mPeimTestProtocol;
