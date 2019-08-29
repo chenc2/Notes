@@ -2,6 +2,8 @@
 
 ## PEIM Test Driver
 ``` C
+#include <uefi.h>
+#include <Pi\PiPeiCis.h>
 #include <Library/DebugLib.h>
 #include <Library/PeiServicesLib.h>
 
@@ -89,6 +91,8 @@ PeimTestEntryPoint(
 
 ## PEIM Caller Driver
 ``` C
+#include <uefi.h>
+#include <Pi\PiPeiCis.h>
 #include <Library/DebugLib.h>
 #include <Library/PeiServicesLib.h>
 
