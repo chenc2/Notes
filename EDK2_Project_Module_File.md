@@ -10,6 +10,16 @@
 |[Guids]|A list of the global GUID Names that are used by the module, and not already included.|
 |[LibraryClasses]|Used to list the names of the library classes that are required, or optionally required by a component.|
 |[Packages]|Lists all of the EDK II declaration files that are used by the component.|
+### BuildOptions
+- **[Compiler]: [$(Target)]\_[TOOL_CHAN_TAG]\_[$(Arch)]\_[CC|DLINK]\_FLAGS [=|==] Args**
+  - **Compiler: MSFT,Intel,GCC,RVCT**
+  - **Target: DEBUG,RELEASE,**
+  - **TOOL_CHAN_TAG: Ref Conf\tools_def.txt**
+  - **Arch: IA32,X64**
+  - **CC|DLINK: compile or link**
+  - **=: append**
+  - **==: assign**
+- **This rules could be also used in .dsc file**
 
 # Platform Description File
 ## Section Table
