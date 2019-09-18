@@ -12,3 +12,7 @@
 ### Capsule in Memory
 
 ### Capsule on Disk
+
+## References
+
+[1] https://github.com/tianocore/tianocore.github.io/wiki/UEFI-Capsule-on-Disk-Introducation
