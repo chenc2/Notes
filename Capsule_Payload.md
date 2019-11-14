@@ -3,7 +3,7 @@
 ## Overview
 ![avatar](https://github.com/chenc2/Notes/blob/master/Images/UEFI%20Capsule%20Payload.png)
 
-## EFI Capsule Header
+## 1. EFI Capsule Header
 - **Type, EFI_CAPSULE_HEADER**
 - **Size of EFI_CAPSULE_HEADER is 28**
 ``` C
@@ -34,12 +34,12 @@ typedef struct {
 } EFI_CAPSULE_HEADER;
 ```
 
-## Capsule Body
+## 2. Capsule Body
 - **This part will be processed by ProcessFmpCapsuleImage(DxeCapsuleLib.c) function**
 - **Call StartFmpImage to start all the drivers within capsule**
 - **Process all payloads with SetFmpImageData(DxeCapsuleLib.c) function**
 
-### EFI_FIRMWARE_MANAGEMENT_CAPSULE_HEADER
+### 2.1 EFI_FIRMWARE_MANAGEMENT_CAPSULE_HEADER
 - **The count of Optional drivers is indicated by EmbeddedDriverCount field**
 - **The count of Payload is indicated by PayloadItemCount field**
 ``` C
@@ -66,25 +66,25 @@ typedef struct {
 } EFI_FIRMWARE_MANAGEMENT_CAPSULE_HEADER;
 ```
 
-### Optional Driver 1
+### 2.2 Optional Driver 1
 ### Optional Driver ...
 ### Optional Driver n
 
-### Payload 1
+### 2.3 Payload 1
 ![avatar](https://github.com/chenc2/Notes/blob/master/Images/UEFI%20Capsule%20Payload%201.png)
 - **Payload part will be processed by SetFmpImageData(DxeCapsuleLib.c) function**
 - **Locate protocol gEfiFirmwareManagementProtocolGuid**
 - **Set the pointer Image to point to the Binary Update Image**
 - **Set the pointer VendorCode to point to the Vendor Code Byes**
 - **Call Fmp->SetImage enter SetTheImage of FmpDxe driver**
-#### EFI_FIRMWARE_MANAGEMENT_CAPSULE_IMAGE_HEADER
-#### Binary Update Image
+#### 2.3.1 EFI_FIRMWARE_MANAGEMENT_CAPSULE_IMAGE_HEADER
+#### 2.3.2 Binary Update Image
 - **Processed with SetTheImage function in FmpDxe driver**
 - **Parse EFI_FIRMWARE_IMAGE_AUTHENTICATION and FMP_PAYLOAD_HEADER**
 - **Call FmpDeviceSetImage to update the Real Binary Data**
-##### EFI_FIRMWARE_IMAGE_AUTHENTICATION
+##### 2.3.2.1 EFI_FIRMWARE_IMAGE_AUTHENTICATION
 - **Check whether the signature of the following tow parts are correct**
-##### FMP_PAYLOAD_HEADER
+##### 2.3.2.2 FMP_PAYLOAD_HEADER
 ``` C
 typedef struct {
   UINT32  Signature;
@@ -93,9 +93,9 @@ typedef struct {
   UINT32  LowestSupportedVersion;
 } FMP_PAYLOAD_HEADER;
 ```
-##### Real Binary Data
+##### 2.3.2.3 Real Binary Data
 - **Implement related on different platform**
-##### ICL platform for uCode udpate
+- **ICL platform for uCode udpate**
   - **Full : XDR + FvHeader + Version.ffs + Padding.ffs + uCodeArray.ffs**
   - **Bgup : XDR + FvHeader + Version.ffs + Padding.ffs + uCodeArray.ffs + XDR + BgupContent**
   - **Slot : XDR(0) + XDR(0) + XDR + Version.ffs + XDR + uCodeArray.ffs(Just support one patch in current solution)**
@@ -106,7 +106,7 @@ typedef struct {
     CHAR16  VersionString[0];
   } INTEL_MICROCODE_VERSION_FFS_DATA;
   ```
-#### Vendor Code Byes
+#### 2.3.3 Vendor Code Byes
 
 ### Payload ...
 ### Payload n
