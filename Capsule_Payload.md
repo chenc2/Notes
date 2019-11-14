@@ -70,6 +70,7 @@ typedef struct {
 ### Optional Driver ...
 ### Optional Driver n
 
+![avatar](https://github.com/chenc2/Notes/blob/master/Images/UEFI%20Capsule%20Payload%201.png)
 ### Payload 1
 - **Payload part will be processed by SetFmpImageData(DxeCapsuleLib.c) function**
 - **Locate protocol gEfiFirmwareManagementProtocolGuid**
