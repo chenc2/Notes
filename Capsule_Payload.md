@@ -36,8 +36,8 @@ typedef struct {
 
 ## Capsule Body
 - **This part will be processed by ProcessFmpCapsuleImage(DxeCapsuleLib.c) function**
-- **Try to dispatch all optional drviers in capsule body**
-- **Process al payloads with SetFmpImageData(DxeCapsuleLib.c) function**
+- **Call StartFmpImage to start all the drivers within capsule**
+- **Process all payloads with SetFmpImageData(DxeCapsuleLib.c) function**
 
 ### EFI_FIRMWARE_MANAGEMENT_CAPSULE_HEADER
 - **The count of Optional drivers is indicated by EmbeddedDriverCount field**
@@ -71,11 +71,11 @@ typedef struct {
 ### Optional Driver n
 
 ### Payload 1
-- **Will be processed by SetFmpImageData(DxeCapsuleLib.c) function**
-  - **Locate protocol gEfiFirmwareManagementProtocolGuid**
-  - **Set the pointer Image to point to the Binary Update Image**
-  - **Set the pointer VendorCode to point to the Vendor Code Byes**
-  - **Call Fmp->SetImage enter SetTheImage of FmpDxe driver**
+- **Payload part will be processed by SetFmpImageData(DxeCapsuleLib.c) function**
+- **Locate protocol gEfiFirmwareManagementProtocolGuid**
+- **Set the pointer Image to point to the Binary Update Image**
+- **Set the pointer VendorCode to point to the Vendor Code Byes**
+- **Call Fmp->SetImage enter SetTheImage of FmpDxe driver**
 #### EFI_FIRMWARE_MANAGEMENT_CAPSULE_IMAGE_HEADER
 #### Binary Update Image
 - **Processed with SetTheImage function in FmpDxe driver**
